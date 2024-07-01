@@ -8,6 +8,7 @@ a) **GPS**
 GPS class is used to initialize the GPS object - It requires a uart object and optionally (timeout and satprecission)
 
 timeout -> The maximum time to wait to successfully identify the current GPS coordinate.
+
 satprecission -> The minimum number of fix satellites that is acceptable to identify the GPS coordinate.
 
 Example Usage: 
@@ -21,16 +22,18 @@ c = g.getCurrentGPSLocation()
 The method getCurrentGPSLocation() returns GPSCordinates object - Before using, ensure it has all valid data by invoking isValid method.
 
 if c.isValid():
-  print(c.getLatitude())
 
-  print(c.getLongitude())
+ 	 print(c.getLatitude())
+
+ 	 print(c.getLongitude())
   
-  print(c.getSpeed())
+	  print(c.getSpeed())
   
-  print(c.getAltitude())
+	  print(c.getAltitude())
 
 b) **GPSCordinates**
 This class encapsulates the captured GPS coordinates. Use the getter methods
+
 getLatitude
 
 getLatDirection
