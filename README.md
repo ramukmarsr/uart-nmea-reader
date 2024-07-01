@@ -13,26 +13,40 @@ satprecission -> The minimum number of fix satellites that is acceptable to iden
 Example Usage: 
 
 uart=machine.UART(0, 9600, tx=machine.Pin(16), rx=machine.Pin(17), bits=8, parity=None, stop=1, timeout=300)
+
 g = GPS(uart, timeout=300, satprecission=2)
+
 c = g.getCurrentGPSLocation()
 
 The method getCurrentGPSLocation() returns GPSCordinates object - Before using, ensure it has all valid data by invoking isValid method.
 
 if c.isValid():
   print(c.getLatitude())
+
   print(c.getLongitude())
+  
   print(c.getSpeed())
+  
   print(c.getAltitude())
 
 b) **GPSCordinates**
 This class encapsulates the captured GPS coordinates. Use the getter methods
 getLatitude
+
 getLatDirection
+
 getLongDirection
+
 getLongitude
+
 getAltitude
+
 getAltitudeUnit
+
 getNumSats
+
 getSpeed
+
 getCurrentTime
+
 isValid
